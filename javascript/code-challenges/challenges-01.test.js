@@ -146,19 +146,20 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
+  // Solution code here...
   let arrResult = [];
-  arr.forEach(n => {
-    if (n % 5 === 0 && n%3===0) {
+  arr.forEach((n) => {
+    if (n % 5 === 0 && n % 3 === 0) {
       arrResult.push("Fizz Buzz");
-    }else if (n % 3 === 0) {
+    } else if (n % 3 === 0) {
       arrResult.push("Fizz");
-    }else if (n % 5 === 0)
+    } else if (n % 5 === 0) {
       arrResult.push("Buzz");
-  } else {
-    arrResult.push(n);
-  }
+    } else {
+      arrResult.push(n);
+    }
   });
-return arrResult;
+  return arrResult;
 };
 
 /* ------------------------------------------------------------------------------------------------
