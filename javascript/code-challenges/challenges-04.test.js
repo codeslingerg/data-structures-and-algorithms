@@ -23,10 +23,10 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
   let arr2 = [];
-  arr.forEach((word) => {
-    arr2.push(callback(arr));
-  });
-  return arr;
+  for (let i = 0; i < arr.length; i++) {
+    arr2.push(callback(arr[i]));
+  }
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
