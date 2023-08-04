@@ -61,12 +61,11 @@ const sortByChildren = (charArray) => {
     } else {
       return byChildren;
     }
-  })
+  });
   return charArray;
+};
 
-  };
-
-  console.log(sortByChildren(characters))
+console.log(sortByChildren(characters));
 
 //   let children = [
 //     { name: "Margaery", house: "Tyrell" },
@@ -105,6 +104,7 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  return /\d/.test(input.toString());
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,6 +116,7 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+  return /\d/.test(input.toString());
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -128,6 +129,7 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  return str.match(/\b[A-Z] [a-z]*\b/g) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -138,6 +140,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  return arr.filter((city) => /^[A-J]/i.test(city));
 };
 
 /* ------------------------------------------------------------------------------------------------
