@@ -61,12 +61,11 @@ const sortByChildren = (charArray) => {
     } else {
       return byChildren;
     }
-  })
+  });
   return charArray;
+};
 
-  };
-
-  console.log(sortByChildren(characters))
+console.log(sortByChildren(characters));
 
 //   let children = [
 //     { name: "Margaery", house: "Tyrell" },
