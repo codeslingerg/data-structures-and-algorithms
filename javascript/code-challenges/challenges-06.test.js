@@ -24,7 +24,9 @@ Returns: ['dyoll', 'eimaj'];
 
 const getNames = (arr) => {
   // Solution code here...
+ array-methods
   return arr.map((person) => person.name.split("").reverse().join(""));
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,6 +38,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   // Solution code here...
+ array-methods
   return str + "The end.";
 };
 
@@ -92,6 +95,7 @@ console.log(people[1].isAuthor) prints true
 
 const setStatusAsAuthor = (people) => {
   // Solution code here...
+ array-methods
   people.forEach((person) => (person.isAuthor = true));
 };
 
