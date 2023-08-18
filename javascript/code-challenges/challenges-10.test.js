@@ -7,11 +7,15 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 ------------------------------------------------------------------------------------------------ */
 
-function returnTen(str){
+function returnTen(str) {
   // Solution code here...
-  //Test for placeholder
-}
+  if (str.length <= 10) {
+    return [str];
+  }
 
+  const lastTenChars = str.split('').splice(-10);
+  return lastTenChars;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -28,6 +32,17 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
+  let maxNumber = Number.NEGATIVE_INFINITY; // Initialize with a very small value
+
+  for (const row of matrix) {
+    for (const num of row) {
+      if (num > maxNumber) {
+        maxNumber = num;
+      }
+    }
+  }
+
+  return maxNumber;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,7 +61,23 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let sum = 0;
+
+  for (const row of matrix) {
+    for (const num of row) {
+      sum += num;
+    }
+  }
+
+  return sum;
 };
+
+const matrix = [
+  [1, 3, 4, 5],
+  [4, 5, 1],
+  [2, 5, 5]
+];
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,7 +105,21 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 const grandTotal = (stores) => {
   // Solution code here...
 
+  const totalCookiesPerHour = [];
+
+  for (let hourIndex = 0; hourIndex < hoursOpen.length; hourIndex++) {
+    let sum = 0;
+
+    for (const store of stores) {
+      sum += store[hourIndex];
+    }
+
+    totalCookiesPerHour.push(sum);
+  }
+
+  return totalCookiesPerHour;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -88,6 +133,16 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  const formattedData = [];
+
+  hours.forEach((time, index) => {
+    formattedData.push({
+      sales: `${data[index]} cookies`,
+      time: time
+    });
+  });
+
+  return formattedData;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,8 +168,15 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
-};
+  const petStoreErrand = arr.find(errand => errand.store === 'Pet store');
 
+  if (petStoreErrand) {
+    const treatsItem = petStoreErrand.items.find(item => item.name === 'Treats');
+    return treatsItem ? treatsItem.quantity : 0;
+  }
+
+  return 0; // Return 0 if pet store errand not found
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
@@ -134,8 +196,16 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  //  Solution code here...\ const cellValue = board[row][col];
+  return cellValue === '#' ? 'hit' : 'miss';
 };
+
+const board = [
+  ['#', ' ', '#', ' '],
+  ['#', ' ', '#', ' '],
+  ['#', ' ', ' ', ' '],
+  [' ', ' ', '#', '#'],
+];
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
