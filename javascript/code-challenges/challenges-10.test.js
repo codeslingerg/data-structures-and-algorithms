@@ -7,7 +7,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 ------------------------------------------------------------------------------------------------ */
 
-function returnTen(str){
+function returnTen(str) {
   // Solution code here...
   if (str.length <= 10) {
     return [str];
@@ -15,7 +15,7 @@ function returnTen(str){
 
   const lastTenChars = str.split('').splice(-10);
   return lastTenChars;
-}
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -133,6 +133,16 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  const formattedData = [];
+
+  hours.forEach((time, index) => {
+    formattedData.push({
+      sales: `${data[index]} cookies`,
+      time: time
+    });
+  });
+
+  return formattedData;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,8 +168,15 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
-};
+  const petStoreErrand = arr.find(errand => errand.store === 'Pet store');
 
+  if (petStoreErrand) {
+    const treatsItem = petStoreErrand.items.find(item => item.name === 'Treats');
+    return treatsItem ? treatsItem.quantity : 0;
+  }
+
+  return 0; // Return 0 if pet store errand not found
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
@@ -179,8 +196,16 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  //  Solution code here...\ const cellValue = board[row][col];
+  return cellValue === '#' ? 'hit' : 'miss';
 };
+
+const board = [
+  ['#', ' ', '#', ' '],
+  ['#', ' ', '#', ' '],
+  ['#', ' ', ' ', ' '],
+  [' ', ' ', '#', '#'],
+];
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
