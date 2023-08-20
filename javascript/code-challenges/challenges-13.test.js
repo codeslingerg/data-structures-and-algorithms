@@ -145,6 +145,11 @@ Write a function named findEvery that takes in an array of strings, along with a
 
 const findEvery = (arr, target) => {
   // Solution code here...
+  if (!Array.isArray(arr) || arr.length === 0) {
+    return false; // Return false for invalid input or empty array
+  }
+
+  return arr.every((str) => str.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -161,6 +166,15 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 
 const unenrollBrook = (arr) => {
   // Solution code here...
+  if (!Array.isArray(arr)) {
+    return []; // Return an empty array for invalid input
+  }
+
+  const filteredRosters = arr.map((courseRoster) => {
+    return courseRoster.filter((name) => !name.includes('Brook'));
+  });
+
+  return filteredRosters;
 };
 
 /* ------------------------------------------------------------------------------------------------
